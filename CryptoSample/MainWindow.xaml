@@ -1,0 +1,74 @@
+﻿<Window x:Class="CryptoSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CryptoSample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0"  Margin="10">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Border BorderBrush="Turquoise" BorderThickness="1" Margin="1">
+                <TextBox x:Name="RijndaelTextBlock" Grid.Row="0" Text="Temp" Height="20" VerticalAlignment="Center" ></TextBox>
+            </Border>
+            <Border BorderBrush="Turquoise" BorderThickness="1" Grid.Row="0" Grid.Column="1" Margin="1">
+                <Button Grid.Row="0" Grid.Column="1" Content="Encrypt!" Click="Rijndael_Click"></Button>
+            </Border>
+
+            <Border BorderBrush="Turquoise" BorderThickness="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="1"></Border>
+            <Label Grid.Row="1" Grid.ColumnSpan="2" Content="Rijndael Encrypt Result:" VerticalAlignment="Center"></Label>
+
+            <Border BorderBrush="Turquoise" BorderThickness="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="1"></Border>
+            <TextBlock x:Name="RijndaelEncryptTextBlock" Grid.Row="2" Grid.ColumnSpan="2" Text="Result in"  VerticalAlignment="Center"></TextBlock>
+
+            <Border BorderBrush="Turquoise" BorderThickness="1" Grid.Row="3" Grid.Column="0" Margin="1"></Border>
+            <Label Grid.Row="3" Grid.Column="0" Content="Rijndael Decrypt Result:" VerticalAlignment="Center"></Label>
+                
+            <Border BorderBrush="Turquoise" BorderThickness="1" Grid.Row="3" Grid.Column="1" Margin="1"></Border>
+                <Button Grid.Row="3" Grid.Column="1" Content="Decrypt" Click="Rijndael_Decrypt_Click"></Button>
+
+            <Border BorderBrush="Turquoise" BorderThickness="1" Grid.Row="4" Grid.ColumnSpan="2" Margin="1"></Border>
+            <TextBlock x:Name="RijndaelDecryptTextBlock" Grid.Row="4" Grid.ColumnSpan="2" Text="Result in"  VerticalAlignment="Center"></TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="1"  Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="SaltingTextBlock" Grid.Row="0" Text="Temp" Height="20" VerticalAlignment="Center"></TextBox>
+            <Button Grid.Row="0" Grid.Column="1" Content="Salting!" VerticalAlignment="Center"
+                    Click="Salting_Click"></Button>
+
+            <Label Grid.Row="1" Grid.ColumnSpan="2" Content="Salting Result:" VerticalAlignment="Center"></Label>
+
+            <TextBlock x:Name="SaltingResultTextBlock" Grid.Row="2" Grid.ColumnSpan="2" Text="Result in"  VerticalAlignment="Center"></TextBlock>
+        </Grid>
+
+    </Grid>
+</Window>
